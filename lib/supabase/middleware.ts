@@ -18,6 +18,11 @@ export async function updateSession(request: NextRequest) {
           cookiesToSet.forEach(({ name, value, options }) => supabaseResponse.cookies.set(name, value, options))
         },
       },
+      realtime: {
+        params: {
+          eventsPerSecond: -1, // Disable realtime in middleware
+        },
+      },
     },
   )
 

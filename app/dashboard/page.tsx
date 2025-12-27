@@ -8,14 +8,16 @@ export default async function DashboardPage() {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // Fetch affiliate data if user is an affiliate
-  const { data: affiliate } = await supabase.from("affiliates").select("*").eq("user_id", user?.id).single()
+  const { data: affiliate } = await supabase.from("affiliates").select("*").eq("user_id", user?.id).maybeSingle()
 
-  // Fetch referral count
-  const { count: referralCount } = await supabase
-    .from("referrals")
-    .select("*", { count: "exact", head: true })
-    .eq("affiliate_id", affiliate?.id)
+  let referralCount = 0
+  if (affiliate?.id) {
+    const { count } = await supabase
+      .from("referrals")
+      .select("*", { count: "exact", head: true })
+      .eq("affiliate_id", affiliate.id)
+    referralCount = count || 0
+  }
 
   const stats = [
     {

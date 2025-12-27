@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
 import { Send, Bot, User, Sparkles } from "lucide-react"
+import { sendMessage } from "./actions"
 
 interface Message {
   role: "user" | "assistant"
@@ -39,17 +40,28 @@ export default function ChatPage() {
     setMessages((prev) => [...prev, { role: "user", content: userMessage }])
     setIsLoading(true)
 
-    // Simulate AI response (replace with actual AI SDK call)
-    setTimeout(() => {
+    try {
+      const assistantResponse = await sendMessage(userMessage)
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content: `Thanks for your question about "${userMessage}". As your AI business advisor, I'm here to help you succeed. Let me provide some insights on this topic...`,
+          content: assistantResponse,
         },
       ])
+    } catch (error) {
+      console.error("[v0] AI generation error:", error)
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content:
+            "I apologize, but I encountered an error processing your request. Please try again or contact support if the issue persists.",
+        },
+      ])
+    } finally {
       setIsLoading(false)
-    }, 1500)
+    }
   }
 
   const suggestedPrompts = [

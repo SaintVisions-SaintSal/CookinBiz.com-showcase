@@ -1,12 +1,18 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import { Toaster } from "sonner"
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+})
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700", "800", "900"],
 })
 
 export const metadata: Metadata = {
@@ -43,7 +49,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} font-sans antialiased bg-[#0a0b0d]`}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-[#0a0b0d]`}>
         {children}
         <Toaster
           position="top-right"

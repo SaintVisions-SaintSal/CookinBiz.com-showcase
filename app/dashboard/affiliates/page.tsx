@@ -1,7 +1,8 @@
 import { createClient } from "@/lib/supabase/server"
 import Link from "next/link"
-import { DollarSign, Users, TrendingUp, Trophy, ChevronRight, Wallet } from "lucide-react"
+import { DollarSign, Users, TrendingUp, Trophy, ChevronRight, Wallet, Sparkles } from "lucide-react"
 import { CopyButton } from "@/components/copy-button"
+import { JoinAffiliateButton } from "@/components/join-affiliate-button"
 
 export default async function AffiliatesPage() {
   const supabase = await createClient()
@@ -9,21 +10,19 @@ export default async function AffiliatesPage() {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // Fetch or create affiliate record
-  const { data: affiliate } = await supabase.from("affiliates").select("*").eq("user_id", user?.id).single()
+  const { data: affiliate } = await supabase.from("affiliates").select("*").eq("user_id", user?.id).maybeSingle()
 
-  // If no affiliate record, we'll show join CTA
   const isAffiliate = !!affiliate
 
   // Generate referral link
   const referralCode = affiliate?.affiliate_code || user?.id?.slice(0, 8).toUpperCase()
-  const referralLink = `https://cookinbiz.com/?ref=${referralCode}`
+  const referralLink = `${process.env.NEXT_PUBLIC_SITE_URL || "https://cookinbiz.com"}?ref=${referralCode}`
 
   // Fetch referrals if affiliate
   const { data: referrals } = isAffiliate
     ? await supabase
         .from("referrals")
-        .select("*, leads(*)")
+        .select("*")
         .eq("affiliate_id", affiliate?.id)
         .order("created_at", { ascending: false })
         .limit(10)
@@ -61,6 +60,95 @@ export default async function AffiliatesPage() {
     { label: "Conversion Rate", value: "0%", icon: TrendingUp, color: "text-purple-400", bg: "bg-purple-500/20" },
   ]
 
+  if (!isAffiliate) {
+    return (
+      <div className="p-6 lg:p-10">
+        <div className="max-w-4xl mx-auto">
+          {/* Hero Section */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/20 border border-green-500/30 mb-6">
+              <Sparkles className="w-4 h-4 text-green-400" />
+              <span className="text-sm font-medium text-green-400">JOIN THE PROGRAM</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Start earning
+              <br />
+              <span className="text-green-400">30% recurring commission.</span>
+            </h1>
+            <p className="text-xl text-neutral-400 mb-8">Free to join. No caps. No limits. Just passive income.</p>
+            <JoinAffiliateButton />
+          </div>
+
+          {/* Commission Breakdown */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-white mb-6 text-center">
+              Earn up to <span className="text-green-400">$149.10/mo</span> per referral
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {commissionTiers.map((tier, i) => (
+                <div
+                  key={i}
+                  className={`p-6 rounded-2xl border ${tier.color} ${tier.highlight ? "ring-2 ring-purple-500/50" : ""}`}
+                >
+                  {tier.highlight && <div className="text-xs font-bold text-purple-400 mb-2">HIGHEST EARNINGS</div>}
+                  <div className="text-neutral-400 text-sm mb-1">{tier.name}</div>
+                  <div className="text-2xl font-bold text-white mb-3">
+                    ${tier.price}
+                    <span className="text-neutral-500 text-base">/mo</span>
+                  </div>
+                  <div className="pt-3 border-t border-neutral-700">
+                    <div className="text-sm text-neutral-500">You Earn</div>
+                    <div className="text-3xl font-bold text-green-400">
+                      ${tier.commission.toFixed(2)}
+                      <span className="text-green-400/60 text-base">/mo</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Earnings Example */}
+          <div className="p-8 rounded-3xl bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 text-center mb-12">
+            <div className="text-white/60 mb-2">10 Enterprise referrals =</div>
+            <div className="text-5xl md:text-6xl font-bold text-green-400 mb-2">$1,491/mo</div>
+            <div className="text-white/50 mb-6">Recurring passive income. Forever.</div>
+            <JoinAffiliateButton />
+          </div>
+
+          {/* Benefits */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: DollarSign,
+                title: "30% Recurring",
+                desc: "Earn commission every month, not just once",
+              },
+              {
+                icon: Users,
+                title: "Unlimited Referrals",
+                desc: "No caps on how much you can earn",
+              },
+              {
+                icon: Trophy,
+                title: "VP Partner Program",
+                desc: "Earn 15% override on your team's sales",
+              },
+            ].map((benefit, i) => (
+              <div key={i} className="p-6 rounded-2xl bg-neutral-900/50 border border-neutral-800 text-center">
+                <div className="w-12 h-12 rounded-2xl bg-green-500/20 flex items-center justify-center mx-auto mb-4">
+                  <benefit.icon className="w-6 h-6 text-green-400" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">{benefit.title}</h3>
+                <p className="text-neutral-400 text-sm">{benefit.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="p-6 lg:p-10">
       {/* Header */}
@@ -68,7 +156,7 @@ export default async function AffiliatesPage() {
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm font-medium mb-2">
             <Trophy className="w-4 h-4" />
-            {isAffiliate ? "Partner Status: Active" : "Join the Program"}
+            Partner Status: Active
           </div>
           <h1 className="text-3xl font-bold text-white mb-1">Affiliate Dashboard</h1>
           <p className="text-neutral-400">Earn 30% recurring commission on every referral.</p>
@@ -105,7 +193,7 @@ export default async function AffiliatesPage() {
             <p className="text-neutral-400">Share this link and earn 30% recurring commission for life!</p>
           </div>
           <div className="flex items-center gap-3">
-            <div className="px-4 py-3 bg-black/50 rounded-xl border border-neutral-700 font-mono text-neutral-300 text-sm">
+            <div className="px-4 py-3 bg-black/50 rounded-xl border border-neutral-700 font-mono text-neutral-300 text-sm max-w-md overflow-x-auto">
               {referralLink}
             </div>
             <CopyButton text={referralLink} />
@@ -189,16 +277,16 @@ export default async function AffiliatesPage() {
               <div key={i} className="flex items-center justify-between p-4 rounded-xl bg-black/30">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-black font-bold">
-                    {referral.leads?.name?.charAt(0) || "?"}
+                    {referral.referred_email?.charAt(0).toUpperCase() || "?"}
                   </div>
                   <div>
-                    <div className="font-medium text-white">{referral.leads?.name || "Anonymous"}</div>
+                    <div className="font-medium text-white">{referral.referred_email || "Anonymous"}</div>
                     <div className="text-sm text-neutral-500">{referral.status}</div>
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="font-bold text-green-400">${Number(referral.commission_amount || 0).toFixed(2)}</div>
-                  <div className="text-xs text-green-400/60">commission</div>
+                  <div className="font-bold text-green-400">${Number(referral.commission_earned || 0).toFixed(2)}</div>
+                  <div className="text-xs text-green-400/60">total earned</div>
                 </div>
               </div>
             ))}

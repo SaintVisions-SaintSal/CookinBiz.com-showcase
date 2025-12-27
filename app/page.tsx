@@ -23,65 +23,69 @@ export default function HomePage() {
       <div className="fixed inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] pointer-events-none" />
 
       {/* Navigation - Apple style minimal */}
-      <nav className="relative z-50 border-b border-white/5 bg-black/80 backdrop-blur-2xl sticky top-0">
+      <nav className="relative z-50 border-b border-white/5 bg-black/90 backdrop-blur-2xl sticky top-0">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <Image
-                src="/images/transparentsaintsallogo.png"
-                alt="SaintSal"
-                width={48}
-                height={48}
-                className="rounded-xl"
-              />
+              <div className="relative">
+                <Image
+                  src="/images/transparentsaintsallogo.png"
+                  alt="SaintSal"
+                  width={56}
+                  height={56}
+                  className="rounded-xl drop-shadow-[0_0_15px_rgba(245,200,66,0.4)]"
+                />
+              </div>
               <div className="flex flex-col">
                 <span
-                  className="text-2xl font-serif font-bold tracking-tight text-gold-gradient"
+                  className="text-3xl font-serif font-bold tracking-tight text-gold-shimmer"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   SaintSal<sup className="text-xs">™</sup>
                 </span>
-                <span className="text-[10px] text-white/40 tracking-widest uppercase">
+                <span className="text-[11px] text-white/50 tracking-[0.2em] uppercase font-light">
                   By Saint Vision Technologies
                 </span>
               </div>
             </div>
+
             <div className="hidden md:flex items-center gap-8">
               <Link
                 href="#ai"
-                className="text-sm font-medium text-white/70 hover:text-white transition-colors tracking-wide"
+                className="text-sm font-medium text-white/80 hover:text-white transition-colors tracking-wide"
               >
                 AI
               </Link>
               <Link
                 href="#use-cases"
-                className="text-sm font-medium text-white/70 hover:text-white transition-colors tracking-wide"
+                className="text-sm font-medium text-white/80 hover:text-white transition-colors tracking-wide"
               >
                 Use Cases
               </Link>
               <Link
                 href="#pricing"
-                className="text-sm font-medium text-white/70 hover:text-white transition-colors tracking-wide"
+                className="text-sm font-medium text-white/80 hover:text-white transition-colors tracking-wide"
               >
                 Pricing
               </Link>
               <Link
                 href="#affiliate"
-                className="text-sm text-amber-400 font-semibold hover:text-amber-300 transition-colors tracking-wide"
+                className="text-sm text-gold-shimmer font-semibold hover:drop-shadow-[0_0_8px_rgba(245,200,66,0.6)] transition-all tracking-wide"
               >
                 Affiliates
               </Link>
             </div>
+
             <div className="flex items-center gap-4">
               <Link
                 href="/auth/login"
-                className="text-sm font-medium text-white/70 hover:text-white transition-colors tracking-wide"
+                className="text-sm font-medium text-white/80 hover:text-white transition-colors tracking-wide"
               >
-                Log in
+                Sign In
               </Link>
               <Link
                 href="/auth/signup"
-                className="px-5 py-2.5 bg-white text-black text-sm font-semibold rounded-full hover:bg-white/90 transition-all tracking-wide"
+                className="px-6 py-2.5 bg-gradient-to-r from-[#c9a84a] via-[#f5c842] to-[#c9a84a] bg-[length:200%_100%] text-black text-sm font-bold rounded-full hover:bg-[position:100%_0] transition-all duration-300 tracking-wide shadow-lg hover:shadow-[0_0_20px_rgba(245,200,66,0.5)]"
               >
                 Get Started
               </Link>
@@ -613,255 +617,22 @@ export default function HomePage() {
             {[
               { name: "Console", desc: "Command center", icon: Target },
               { name: "Chat", desc: "AI advisor", icon: MessageSquare },
-              { name: "Business", desc: "Intelligence", icon: BarChart3 },
-              { name: "Brokerage", desc: "Trading", icon: TrendingUp },
-              { name: "Enterprise", desc: "White-label", icon: Building2 },
+              { name: "Other Product", desc: "Description of other product", icon: DollarSign },
             ].map((product, i) => (
               <div
                 key={i}
-                className="group p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] hover:border-amber-500/20 transition-all duration-300 text-center"
+                className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400/10 to-amber-600/10 flex items-center justify-center mx-auto mb-4 group-hover:from-amber-400/20 group-hover:to-amber-600/20 transition-colors">
-                  <product.icon className="w-6 h-6 text-amber-400" />
-                </div>
-                <div className="font-medium text-white mb-1">SaintSal {product.name}</div>
-                <div className="text-sm text-white/50">{product.desc}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Affiliate Section - THE STAR */}
-      <section id="affiliate" className="py-32 px-6 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-green-500/5 via-green-500/10 to-green-500/5" />
-        <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/20 border border-green-500/30 mb-6">
-              <DollarSign className="w-4 h-4 text-green-400" />
-              <span className="text-sm font-medium text-green-400">30% RECURRING COMMISSION</span>
-            </div>
-            <h2 className="text-4xl md:text-6xl font-semibold tracking-tight mb-6">
-              The most lucrative
-              <br />
-              <span className="text-green-400">affiliate program.</span>
-            </h2>
-            <p className="text-xl text-white/50 max-w-2xl mx-auto">
-              Join thousands earning recurring passive income. No caps. No limits.
-            </p>
-          </div>
-
-          {/* Commission Cards */}
-          <div className="grid md:grid-cols-4 gap-4 mb-12">
-            {[
-              { tier: "Starter", price: 27, commission: 8.1 },
-              { tier: "Pro", price: 97, commission: 29.1 },
-              { tier: "Teams", price: 297, commission: 89.1 },
-              { tier: "Enterprise", price: 497, commission: 149.1, highlight: true },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className={`p-6 rounded-2xl bg-white/[0.03] border ${item.highlight ? "border-green-500/30 ring-1 ring-green-500/20" : "border-white/10"}`}
-              >
-                {item.highlight && <div className="text-xs font-medium text-green-400 mb-2">HIGHEST EARNINGS</div>}
-                <div className="text-white/60 text-sm">{item.tier}</div>
-                <div className="text-2xl font-semibold text-white mb-4">
-                  ${item.price}
-                  <span className="text-white/40 text-sm">/mo</span>
-                </div>
-                <div className="pt-4 border-t border-white/10">
-                  <div className="text-xs text-white/50">You earn</div>
-                  <div className="text-3xl font-semibold text-green-400">
-                    ${item.commission.toFixed(2)}
-                    <span className="text-green-400/60 text-sm">/mo</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Earnings Example */}
-          <div className="max-w-3xl mx-auto">
-            <div className="p-8 rounded-2xl bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 text-center">
-              <div className="text-white/60 mb-2">10 Enterprise referrals =</div>
-              <div className="text-5xl md:text-6xl font-bold text-green-400 mb-2">$1,491/mo</div>
-              <div className="text-white/70 text-lg max-w-2xl mx-auto">Recurring passive income</div>
-              <Link
-                href="/dashboard/affiliates"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-green-500 text-white font-medium rounded-full hover:bg-green-400 transition-all"
-              >
-                Join Affiliate Program
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <p className="text-white/40 text-sm mt-4">Free to join. Start earning today.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="pricing" className="py-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-amber-400 text-sm font-medium mb-4">PRICING</p>
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4">
-              Simple pricing.
-              <br />
-              <span className="text-white/50">No surprises.</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {[
-              {
-                name: "Starter",
-                price: 27,
-                description: "For getting started",
-                features: ["500 AI queries/mo", "50 property scores", "Voice agent", "3 team members"],
-                cta: "Start free trial",
-              },
-              {
-                name: "Pro",
-                price: 97,
-                description: "For entrepreneurs",
-                features: [
-                  "Unlimited AI queries",
-                  "Unlimited property scores",
-                  "War Room access",
-                  "Affiliate dashboard",
-                  "10 team members",
-                ],
-                popular: true,
-                cta: "Start free trial",
-              },
-              {
-                name: "Teams",
-                price: 297,
-                description: "For growing teams",
-                features: [
-                  "Everything in Pro",
-                  "Trading platform",
-                  "Unlimited members",
-                  "Custom integrations",
-                  "Priority support",
-                ],
-                cta: "Start free trial",
-              },
-              {
-                name: "Enterprise",
-                price: 497,
-                description: "For organizations",
-                features: [
-                  "Everything in Teams",
-                  "White-label",
-                  "Custom AI training",
-                  "SLA guarantee",
-                  "Dedicated manager",
-                ],
-                highlight: true,
-                cta: "Contact sales",
-              },
-            ].map((plan, i) => (
-              <div
-                key={i}
-                className={`relative p-6 rounded-2xl ${
-                  plan.highlight
-                    ? "bg-gradient-to-b from-amber-500/10 to-transparent border-amber-500/30"
-                    : plan.popular
-                      ? "bg-white/[0.04] border-white/20"
-                      : "bg-white/[0.02] border-white/10"
-                } border`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-white text-black text-xs font-medium rounded-full">
-                    Most Popular
-                  </div>
-                )}
-                {plan.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-gradient-to-r from-amber-500 to-amber-600 text-black text-xs font-medium rounded-full">
-                    Best Value
-                  </div>
-                )}
                 <div className="mb-4">
-                  <div className="text-lg font-medium text-white">{plan.name}</div>
-                  <div className="text-sm text-white/50">{plan.description}</div>
+                  <product.icon className="w-10 h-10 text-amber-400" />
                 </div>
-                <div className="mb-6">
-                  <span className="text-4xl font-semibold text-white">${plan.price}</span>
-                  <span className="text-white/50">/mo</span>
-                </div>
-                <ul className="space-y-3 mb-6">
-                  {plan.features.map((feature, j) => (
-                    <li key={j} className="flex items-center gap-2 text-sm text-white/70">
-                      <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href="/auth/signup"
-                  className={`block w-full py-3 text-center font-medium rounded-full transition-all ${
-                    plan.highlight || plan.popular
-                      ? "bg-white text-black hover:bg-white/90"
-                      : "bg-white/10 text-white hover:bg-white/20"
-                  }`}
-                >
-                  {plan.cta}
-                </Link>
+                <h3 className="text-lg font-medium mb-2 text-white">{product.name}</h3>
+                <p className="text-sm text-white/50 leading-relaxed">{product.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      {/* Final CTA */}
-      <section className="py-32 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <Image
-            src="/images/transparentsaintsallogo.png"
-            alt="SaintSal"
-            width={80}
-            height={80}
-            className="mx-auto mb-8"
-          />
-          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight mb-6">
-            Ready to build
-            <br />
-            <span className="text-gold-gradient">your empire?</span>
-          </h2>
-          <p className="text-xl text-white/50 mb-10">Join 12,000+ entrepreneurs using SaintSal to build wealth.</p>
-          <Link
-            href="/auth/signup"
-            className="inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-semibold rounded-full hover:from-amber-400 hover:to-amber-500 transition-all shadow-2xl shadow-amber-500/25 text-lg"
-          >
-            Get started free
-            <ArrowRight className="w-6 h-6" />
-          </Link>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-12 px-6 border-t border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <Image src="/images/transparentsaintsallogo.png" alt="SaintSal" width={32} height={32} />
-              <span className="text-sm text-white/50">© 2025 Saint Vision Technologies. All rights reserved.</span>
-            </div>
-            <div className="flex items-center gap-6">
-              <Link href="#" className="text-sm text-white/50 hover:text-white transition-colors">
-                Privacy
-              </Link>
-              <Link href="#" className="text-sm text-white/50 hover:text-white transition-colors">
-                Terms
-              </Link>
-              <Link href="#" className="text-sm text-white/50 hover:text-white transition-colors">
-                Contact
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

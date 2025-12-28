@@ -111,7 +111,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-xl md:text-2xl text-white/50 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-            Trading. Real Estate. Business Intelligence. All powered by SaintSal AI.
+            Trading. Real Estate. Business Intelligence. All powered by SaintSal™ AI.
             <br className="hidden md:block" />
             Start free. Scale infinitely.
           </p>
@@ -172,14 +172,14 @@ export default function HomePage() {
       <section id="ai" className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <p className="text-amber-400 text-sm font-medium mb-4">SAINTSAL AI</p>
+            <p className="text-amber-400 text-sm font-medium mb-4">SAINTSAL™ AI</p>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight mb-6">
               Meet your AI
               <br />
               <span className="text-gold-gradient">business partner.</span>
             </h2>
             <p className="text-xl text-white/50 max-w-2xl mx-auto">
-              SaintSal understands your goals, analyzes markets, and delivers actionable insights 24/7.
+              SaintSal™ understands your goals, analyzes markets, and delivers actionable insights 24/7.
             </p>
           </div>
 
@@ -190,7 +190,7 @@ export default function HomePage() {
                 icon: MessageSquare,
                 title: "Natural Conversations",
                 description:
-                  "Talk to SaintSal like a trusted advisor. Ask anything about business, investing, or strategy.",
+                  "Talk to SaintSal™ like a trusted advisor. Ask anything about business, investing, or strategy.",
               },
               {
                 icon: Brain,
@@ -206,7 +206,7 @@ export default function HomePage() {
                 icon: Code,
                 title: "Code Generation",
                 description:
-                  "Need automations? SaintSal writes code, builds integrations, and automates your workflow.",
+                  "Need automations? SaintSal™ writes code, builds integrations, and automates your workflow.",
               },
             ].map((feature, i) => (
               <div
@@ -227,9 +227,9 @@ export default function HomePage() {
             <div className="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden">
               <div className="p-4 border-b border-white/5 flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg overflow-hidden">
-                  <Image src="/images/thatdripbottomsaintsallogo.png" alt="SaintSal" width={32} height={32} />
+                  <Image src="/images/thatdripbottomsaintsallogo.png" alt="SaintSal™" width={32} height={32} />
                 </div>
-                <span className="text-sm font-medium">SaintSal Chat</span>
+                <span className="text-sm font-medium">SaintSal™ Chat</span>
                 <span className="text-xs px-2 py-0.5 rounded-full bg-green-500/20 text-green-400 ml-auto">Online</span>
               </div>
               <div className="p-6 space-y-4">
@@ -241,7 +241,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex gap-3">
                   <div className="w-8 h-8 rounded-lg overflow-hidden">
-                    <Image src="/images/thatdripbottomsaintsallogo.png" alt="SaintSal" width={32} height={32} />
+                    <Image src="/images/thatdripbottomsaintsallogo.png" alt="SaintSal™" width={32} height={32} />
                   </div>
                   <div className="flex-1 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-sm">
                     <p className="text-amber-400 font-medium mb-2">Property Analysis Complete</p>
@@ -301,7 +301,7 @@ export default function HomePage() {
               </h3>
               <p className="text-lg text-white/50 mb-8 leading-relaxed">
                 Find motivated sellers, analyze properties instantly, calculate MAO with precision, and manage your
-                entire deal pipeline. SaintSal handles the numbers so you can focus on closing.
+                entire deal pipeline. SaintSal™ handles the numbers so you can focus on closing.
               </p>
               <div className="space-y-4">
                 {[
@@ -397,7 +397,7 @@ export default function HomePage() {
               </h3>
               <p className="text-lg text-white/50 mb-8 leading-relaxed">
                 Real-time market data, AI-powered signals, and portfolio tracking. Whether you trade stocks, crypto, or
-                forex - SaintSal has you covered.
+                forex - SaintSal™ has you covered.
               </p>
               <div className="space-y-4">
                 {[
@@ -605,7 +605,7 @@ export default function HomePage() {
       <section className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-amber-400 text-sm font-medium mb-4">THE SAINTSAL SUITE</p>
+            <p className="text-amber-400 text-sm font-medium mb-4">THE SAINTSAL™ SUITE</p>
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
               Everything you need.
               <br />

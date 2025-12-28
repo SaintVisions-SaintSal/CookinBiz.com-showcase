@@ -55,7 +55,12 @@ export default async function DashboardPage() {
   ]
 
   const quickActions = [
-    { name: "Chat with SaintSal", icon: MessageSquare, href: "/dashboard/chat", color: "from-amber-500 to-orange-500" },
+    {
+      name: "Chat with SaintSal™",
+      icon: MessageSquare,
+      href: "/dashboard/chat",
+      color: "from-amber-500 to-orange-500",
+    },
     { name: "Trading Platform", icon: TrendingUp, href: "/dashboard/trading", color: "from-green-500 to-emerald-500" },
     { name: "Real Estate Deals", icon: Building2, href: "/dashboard/real-estate", color: "from-blue-500 to-cyan-500" },
     { name: "Affiliate Dashboard", icon: Users, href: "/dashboard/affiliates", color: "from-purple-500 to-pink-500" },

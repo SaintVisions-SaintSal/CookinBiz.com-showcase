@@ -16,7 +16,7 @@ export default function ChatPage() {
     {
       role: "assistant",
       content:
-        "Hey! I'm SaintSal, your AI business advisor. I can help you with real estate investing, business strategy, trading insights, and more. What would you like to know?",
+        "Hey! I'm SaintSal™, your AI business advisor. I can help you with real estate investing, business strategy, trading insights, and more. What would you like to know?",
     },
   ])
   const [input, setInput] = useState("")
@@ -79,7 +79,7 @@ export default function ChatPage() {
           <Bot className="w-6 h-6 text-black" />
         </div>
         <div>
-          <h1 className="text-xl font-bold text-white">SaintSal AI</h1>
+          <h1 className="text-xl font-bold text-white">SaintSal™ AI</h1>
           <p className="text-sm text-neutral-400">Your AI Business Advisor</p>
         </div>
         <div className="ml-auto flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20">
@@ -157,7 +157,7 @@ export default function ChatPage() {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask SaintSal anything..."
+          placeholder="Ask SaintSal™ anything..."
           className="flex-1 px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-xl text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#d4a106] focus:ring-1 focus:ring-[#d4a106]/20"
         />
         <button

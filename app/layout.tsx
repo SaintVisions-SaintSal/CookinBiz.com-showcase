@@ -17,27 +17,35 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "SaintSal™ - The Everything Platform | 30% Affiliate Program",
+    default: "SaintSal™ - The Everything Platform by Saint Vision Technologies",
     template: "%s | SaintSal™",
   },
   description:
-    "AI-powered platform for trading, real estate wholesaling, and business intelligence. Earn 30% recurring commissions with our industry-leading affiliate program. Enterprise plan at $497/mo.",
+    "SaintSal™ - AI-powered platform for trading, real estate wholesaling, and business intelligence. Backed by 2 patents + 2 trademarks worth $200-400M. Earn 30% recurring commissions ($8.10-$149.10/mo) with our industry-leading affiliate program.",
   keywords: [
-    "AI",
+    "SaintSal",
+    "Saint Vision Technologies",
+    "AI platform",
     "trading",
-    "real estate",
-    "wholesaling",
+    "real estate wholesaling",
+    "business intelligence",
     "affiliate program",
     "30% commission",
-    "SaintSal",
     "Cookin Capital",
-    "$497 Enterprise",
+    "Enterprise $497",
+    "HACP",
+    "US Patent 10,290,222",
   ],
+  openGraph: {
+    title: "SaintSal™ - The Everything Platform",
+    description: "AI-powered trading, real estate, and business intelligence. 30% affiliate commissions.",
+    type: "website",
+  },
     generator: 'v0.app'
 }
 
 export const viewport: Viewport = {
-  themeColor: "#0a0b0d",
+  themeColor: "#0a0a0a",
   width: "device-width",
   initialScale: 1,
 }
@@ -49,14 +57,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-[#0a0b0d]`}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-[#0a0a0a]`}>
         {children}
         <Toaster
           position="top-right"
           toastOptions={{
             style: {
               background: "rgba(26, 29, 35, 0.95)",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
+              border: "1px solid rgba(212, 161, 6, 0.2)",
               color: "white",
             },
           }}

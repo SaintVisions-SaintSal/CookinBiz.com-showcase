@@ -36,7 +36,7 @@ export default async function DashboardLayout({
 
   const navItems = [
     { href: "/dashboard", icon: LayoutDashboard, label: "Overview" },
-    { href: "/dashboard/chat", icon: MessageSquare, label: "SaintSal Chat" },
+    { href: "/dashboard/chat", icon: MessageSquare, label: "SaintSal™ Chat" },
     { href: "/dashboard/trading", icon: TrendingUp, label: "Trading" },
     { href: "/dashboard/real-estate", icon: Building2, label: "Real Estate" },
     { href: "/dashboard/affiliates", icon: Users, label: "Affiliates" },
@@ -50,8 +50,12 @@ export default async function DashboardLayout({
       <aside className="w-64 bg-neutral-900/50 border-r border-neutral-800 flex flex-col">
         <div className="p-6 border-b border-neutral-800">
           <Link href="/dashboard" className="flex items-center gap-3">
-            <img src="/images/transparentsaintsallogo.png" alt="SaintSal" className="w-10 h-10" />
-            <span className="text-[#d4a106] font-bold text-lg">Cookin' Capital</span>
+            <img
+              src="/images/transparentsaintsallogo.png"
+              alt="SaintSal™"
+              className="w-10 h-10 drop-shadow-[0_0_10px_rgba(212,161,6,0.4)]"
+            />
+            <span className="text-[#d4a106] font-bold text-lg font-serif">SaintSal™</span>
           </Link>
         </div>
 

@@ -3,17 +3,14 @@ import Image from "next/image"
 import {
   ArrowRight,
   Building2,
-  TrendingUp,
-  DollarSign,
-  CheckCircle2,
-  Play,
   MessageSquare,
-  BarChart3,
-  Target,
   Code,
   Mic,
   Brain,
   ChevronRight,
+  Users,
+  Home,
+  ExternalLink,
 } from "lucide-react"
 
 export default function HomePage() {
@@ -30,7 +27,7 @@ export default function HomePage() {
               <div className="relative">
                 <Image
                   src="/images/transparentsaintsallogo.png"
-                  alt="SaintSal"
+                  alt="SaintSal™"
                   width={56}
                   height={56}
                   className="rounded-xl drop-shadow-[0_0_15px_rgba(245,200,66,0.4)]"
@@ -51,29 +48,31 @@ export default function HomePage() {
 
             <div className="hidden md:flex items-center gap-8">
               <Link
+                href="#ecosystem"
+                className="text-sm font-medium text-white/80 hover:text-white transition-colors tracking-wide"
+              >
+                Ecosystem
+              </Link>
+              <Link
                 href="#ai"
                 className="text-sm font-medium text-white/80 hover:text-white transition-colors tracking-wide"
               >
                 AI
               </Link>
               <Link
-                href="#use-cases"
+                href="#ip"
                 className="text-sm font-medium text-white/80 hover:text-white transition-colors tracking-wide"
               >
-                Use Cases
+                IP Portfolio
               </Link>
-              <Link
-                href="#pricing"
-                className="text-sm font-medium text-white/80 hover:text-white transition-colors tracking-wide"
-              >
-                Pricing
-              </Link>
-              <Link
-                href="#affiliate"
+              <a
+                href="https://cookinpartners.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-gold-shimmer font-semibold hover:drop-shadow-[0_0_8px_rgba(245,200,66,0.6)] transition-all tracking-wide"
               >
-                Affiliates
-              </Link>
+                Become a Partner
+              </a>
             </div>
 
             <div className="flex items-center gap-4">
@@ -94,13 +93,12 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* Hero Section - Apple style large typography */}
+      {/* Hero Section */}
       <section className="relative pt-24 pb-32 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Announcement badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
-            <span className="text-xs font-medium text-amber-400">NEW</span>
-            <span className="text-sm text-white/60">SaintSal Enterprise is now available</span>
+            <span className="text-xs font-medium text-amber-400">PATENT PROTECTED</span>
+            <span className="text-sm text-white/60">US Patent 10,290,222 + HACP™ Pending</span>
             <ChevronRight className="w-4 h-4 text-white/40" />
           </div>
 
@@ -113,7 +111,7 @@ export default function HomePage() {
           <p className="text-xl md:text-2xl text-white/50 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
             Trading. Real Estate. Business Intelligence. All powered by SaintSal™ AI.
             <br className="hidden md:block" />
-            Start free. Scale infinitely.
+            One platform. Endless possibilities.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
@@ -124,23 +122,25 @@ export default function HomePage() {
               Start building
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link
-              href="#demo"
-              className="flex items-center gap-2 px-8 py-4 text-white/80 hover:text-white transition-all text-lg"
+            <a
+              href="https://cookinpartners.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-8 py-4 text-amber-400 hover:text-amber-300 transition-all text-lg border border-amber-400/30 rounded-full hover:border-amber-400/50"
             >
-              <Play className="w-5 h-5" />
-              Watch demo
-            </Link>
+              <Users className="w-5 h-5" />
+              Partner Program
+            </a>
           </div>
 
-          {/* Hero visual - SaintSal robot */}
+          {/* Hero visual */}
           <div className="relative max-w-4xl mx-auto">
             <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 via-transparent to-amber-500/20 blur-3xl" />
             <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-1">
               <div className="rounded-[20px] overflow-hidden bg-[#0a0a0a]">
                 <Image
                   src="/images/svt-office.png"
-                  alt="Saint Vision Technologies Office"
+                  alt="Saint Vision Technologies"
                   width={1200}
                   height={675}
                   className="w-full h-auto"
@@ -152,23 +152,111 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trusted by section */}
-      <section className="py-16 px-6 border-y border-white/5">
+      {/* Ecosystem Section - Links to other properties */}
+      <section id="ecosystem" className="py-32 px-6 bg-gradient-to-b from-transparent via-amber-500/5 to-transparent">
         <div className="max-w-7xl mx-auto">
-          <p className="text-center text-sm text-white/40 mb-8">Trusted by entrepreneurs worldwide</p>
-          <div className="flex flex-wrap items-center justify-center gap-12 opacity-50">
-            {["12,000+ Active Users", "$2.4M+ Paid to Affiliates", "50,000+ AI Queries Daily", "4.9/5 Rating"].map(
-              (stat, i) => (
-                <div key={i} className="text-sm font-medium text-white/60">
-                  {stat}
-                </div>
-              ),
-            )}
+          <div className="text-center mb-16">
+            <p className="text-amber-400 text-sm font-bold tracking-[0.2em] mb-4 uppercase">The SaintSal™ Ecosystem</p>
+            <h2 className="text-4xl md:text-6xl font-semibold tracking-tight mb-6">
+              One vision.
+              <br />
+              <span className="text-gold-gradient">Multiple platforms.</span>
+            </h2>
+            <p className="text-xl text-white/50 max-w-2xl mx-auto">
+              SaintSal™ powers an entire ecosystem of wealth-building platforms. Each one built with the same AI
+              foundation.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* CookinPartners */}
+            <a
+              href="https://cookinpartners.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-8 rounded-3xl bg-gradient-to-b from-amber-500/10 to-transparent border border-amber-500/20 hover:border-amber-500/40 transition-all duration-300 hover:scale-105"
+            >
+              <div className="absolute top-4 right-4">
+                <ExternalLink className="w-5 h-5 text-amber-400/50 group-hover:text-amber-400 transition-colors" />
+              </div>
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400/20 to-amber-600/20 flex items-center justify-center mb-6">
+                <Users className="w-7 h-7 text-amber-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">CookinPartners</h3>
+              <p className="text-white/60 mb-4">
+                Our affiliate and partnership program. Earn up to 30% commissions + VP override bonuses.
+              </p>
+              <div className="flex items-center gap-2 text-amber-400 font-medium">
+                <span>Join the partner program</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </a>
+
+            {/* CookinCapital */}
+            <a
+              href="https://cookincapital.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-8 rounded-3xl bg-gradient-to-b from-blue-500/10 to-transparent border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 hover:scale-105"
+            >
+              <div className="absolute top-4 right-4">
+                <ExternalLink className="w-5 h-5 text-blue-400/50 group-hover:text-blue-400 transition-colors" />
+              </div>
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-400/20 to-blue-600/20 flex items-center justify-center mb-6">
+                <Building2 className="w-7 h-7 text-blue-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">CookinCapital</h3>
+              <p className="text-white/60 mb-4">
+                Commercial & residential lending. Real estate investments. Institutional capital solutions.
+              </p>
+              <div className="flex items-center gap-2 text-blue-400 font-medium">
+                <span>Explore lending solutions</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </a>
+
+            {/* CookinFlips */}
+            <a
+              href="https://cookinflips.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-8 rounded-3xl bg-gradient-to-b from-green-500/10 to-transparent border border-green-500/20 hover:border-green-500/40 transition-all duration-300 hover:scale-105"
+            >
+              <div className="absolute top-4 right-4">
+                <ExternalLink className="w-5 h-5 text-green-400/50 group-hover:text-green-400 transition-colors" />
+              </div>
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-400/20 to-green-600/20 flex items-center justify-center mb-6">
+                <Home className="w-7 h-7 text-green-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">CookinFlips</h3>
+              <p className="text-white/60 mb-4">
+                Real estate investment platform. Wholesale deals, fix & flips, and passive investment opportunities.
+              </p>
+              <div className="flex items-center gap-2 text-green-400 font-medium">
+                <span>Find investment deals</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </a>
+          </div>
+
+          {/* Stats */}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { value: "$2B+", label: "Funds Delivered" },
+              { value: "$3B+", label: "Assets Resolved" },
+              { value: "50+", label: "Lending Partners" },
+              { value: "12,000+", label: "Active Users" },
+            ].map((stat, i) => (
+              <div key={i} className="text-center p-6 rounded-2xl bg-white/[0.02] border border-white/5">
+                <div className="text-3xl md:text-4xl font-bold text-gold-gradient mb-2">{stat.value}</div>
+                <div className="text-sm text-white/50">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* SaintSal AI Section - The Star */}
+      {/* SaintSal AI Section */}
       <section id="ai" className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
@@ -200,7 +288,7 @@ export default function HomePage() {
               {
                 icon: Mic,
                 title: "Voice Enabled",
-                description: "Speak naturally. SaintSal listens, understands, and responds with voice or text.",
+                description: "Speak naturally. SaintSal™ listens, understands, and responds with voice or text.",
               },
               {
                 icon: Code,
@@ -236,7 +324,7 @@ export default function HomePage() {
                 <div className="flex gap-3">
                   <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-xs">You</div>
                   <div className="flex-1 p-4 rounded-2xl bg-white/5 text-sm">
-                    {"Analyze this property for wholesale potential: 123 Main St, Atlanta GA. ARV around $280k."}
+                    Analyze this property for wholesale potential: 123 Main St, Atlanta GA. ARV around $280k.
                   </div>
                 </div>
                 <div className="flex gap-3">
@@ -263,9 +351,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     <p className="text-white/50 mt-3 text-xs">
-                      {
-                        "Recommendation: Strong wholesale opportunity if acquired under $165k. Market showing 12% YoY appreciation."
-                      }
+                      Recommendation: Strong wholesale opportunity if acquired under $165k.
                     </p>
                   </div>
                 </div>
@@ -275,203 +361,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Use Cases Section */}
-      <section id="use-cases" className="py-32 px-6 bg-gradient-to-b from-transparent via-white/[0.02] to-transparent">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <p className="text-amber-400 text-sm font-medium mb-4">USE CASES</p>
-            <h2 className="text-4xl md:text-6xl font-semibold tracking-tight mb-6">
-              One platform.
-              <br />
-              <span className="text-white/50">Endless possibilities.</span>
-            </h2>
-          </div>
-
-          {/* Real Estate */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-32">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
-                <Building2 className="w-4 h-4 text-blue-400" />
-                <span className="text-sm text-blue-400">Real Estate</span>
-              </div>
-              <h3 className="text-3xl md:text-5xl font-semibold mb-6">
-                Wholesale deals.
-                <br />
-                <span className="text-blue-400">Simplified.</span>
-              </h3>
-              <p className="text-lg text-white/50 mb-8 leading-relaxed">
-                Find motivated sellers, analyze properties instantly, calculate MAO with precision, and manage your
-                entire deal pipeline. SaintSal™ handles the numbers so you can focus on closing.
-              </p>
-              <div className="space-y-4">
-                {[
-                  "Instant property analysis & ARV calculations",
-                  "Automated deal scoring (A/B/C/D)",
-                  "Comp analysis from multiple data sources",
-                  "Pipeline management & follow-up automation",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                    <span className="text-white/70">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 blur-3xl opacity-50" />
-              <div className="relative rounded-2xl border border-white/10 bg-white/[0.02] p-6">
-                <div className="text-sm text-white/50 mb-4">Deal Pipeline</div>
-                <div className="space-y-3">
-                  {[
-                    {
-                      address: "456 Oak Ave",
-                      status: "Hot Lead",
-                      score: "A",
-                      value: "$45k profit",
-                      color: "text-green-400",
-                    },
-                    {
-                      address: "789 Pine St",
-                      status: "Under Contract",
-                      score: "B",
-                      value: "$28k profit",
-                      color: "text-blue-400",
-                    },
-                    {
-                      address: "321 Elm Dr",
-                      status: "Due Diligence",
-                      score: "A",
-                      value: "$52k profit",
-                      color: "text-amber-400",
-                    },
-                  ].map((deal, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/5"
-                    >
-                      <div>
-                        <div className="font-medium text-white">{deal.address}</div>
-                        <div className="text-xs text-white/50">{deal.status}</div>
-                      </div>
-                      <div className="text-right">
-                        <div className={`font-medium ${deal.color}`}>{deal.value}</div>
-                        <div className="text-xs text-white/50">Score: {deal.score}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Trading */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-32">
-            <div className="order-2 lg:order-1 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-emerald-500/20 blur-3xl opacity-50" />
-              <div className="relative rounded-2xl border border-white/10 bg-white/[0.02] p-6">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="text-sm text-white/50">Portfolio Overview</div>
-                  <div className="text-sm text-green-400">+12.4% today</div>
-                </div>
-                <div className="text-4xl font-semibold text-white mb-6">$124,847.32</div>
-                <div className="h-32 flex items-end gap-1">
-                  {[40, 55, 45, 60, 50, 70, 65, 80, 75, 90, 85, 95].map((h, i) => (
-                    <div
-                      key={i}
-                      className="flex-1 bg-gradient-to-t from-green-500/50 to-green-400/80 rounded-t"
-                      style={{ height: `${h}%` }}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 mb-6">
-                <TrendingUp className="w-4 h-4 text-green-400" />
-                <span className="text-sm text-green-400">Trading</span>
-              </div>
-              <h3 className="text-3xl md:text-5xl font-semibold mb-6">
-                Trade smarter.
-                <br />
-                <span className="text-green-400">Not harder.</span>
-              </h3>
-              <p className="text-lg text-white/50 mb-8 leading-relaxed">
-                Real-time market data, AI-powered signals, and portfolio tracking. Whether you trade stocks, crypto, or
-                forex - SaintSal™ has you covered.
-              </p>
-              <div className="space-y-4">
-                {[
-                  "Real-time market data & charts",
-                  "AI-generated trading signals",
-                  "Portfolio tracking & analytics",
-                  "Risk management tools",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" />
-                    <span className="text-white/70">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Business Intelligence */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
-                <BarChart3 className="w-4 h-4 text-purple-400" />
-                <span className="text-sm text-purple-400">Business Intelligence</span>
-              </div>
-              <h3 className="text-3xl md:text-5xl font-semibold mb-6">
-                Data-driven
-                <br />
-                <span className="text-purple-400">decisions.</span>
-              </h3>
-              <p className="text-lg text-white/50 mb-8 leading-relaxed">
-                Turn your business data into actionable insights. Track KPIs, visualize trends, and make smarter
-                decisions with AI-powered analytics.
-              </p>
-              <div className="space-y-4">
-                {[
-                  "Custom dashboards & reports",
-                  "KPI tracking & alerts",
-                  "Competitor analysis",
-                  "Revenue forecasting",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                    <span className="text-white/70">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-3xl opacity-50" />
-              <div className="relative rounded-2xl border border-white/10 bg-white/[0.02] p-6">
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { label: "Revenue", value: "$847K", change: "+24%", positive: true },
-                    { label: "Customers", value: "12,847", change: "+18%", positive: true },
-                    { label: "Conversion", value: "4.2%", change: "+0.8%", positive: true },
-                    { label: "Churn", value: "2.1%", change: "-0.3%", positive: true },
-                  ].map((stat, i) => (
-                    <div key={i} className="p-4 rounded-xl bg-white/[0.03] border border-white/5">
-                      <div className="text-xs text-white/50 mb-1">{stat.label}</div>
-                      <div className="text-2xl font-semibold text-white">{stat.value}</div>
-                      <div className={`text-xs ${stat.positive ? "text-green-400" : "text-red-400"}`}>
-                        {stat.change}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* IP Portfolio Section - Enhanced */}
-      <section className="py-32 px-6 bg-gradient-to-b from-transparent via-amber-500/5 to-transparent relative overflow-hidden">
+      {/* IP Portfolio Section */}
+      <section
+        id="ip"
+        className="py-32 px-6 bg-gradient-to-b from-transparent via-amber-500/5 to-transparent relative overflow-hidden"
+      >
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:64px_64px] opacity-30" />
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -486,9 +380,6 @@ export default function HomePage() {
             </h2>
             <p className="text-xl md:text-2xl text-white/60 max-w-3xl mx-auto leading-relaxed">
               <span className="text-white font-semibold">2 Patents + 2 Trademarks</span> = Impenetrable market position
-              <br />
-              Everything that has been developed — and everything that will be developed to monetize — relies on our
-              foundational IP portfolio.
             </p>
           </div>
 
@@ -500,7 +391,7 @@ export default function HomePage() {
                 date: "Sept 21, 2015",
                 note: "3 yrs before GPT-1",
                 value: "$50-100M",
-                label: "Base",
+                label: "Base Patent",
                 gradient: "from-blue-500/20 to-blue-600/5",
                 border: "border-blue-500/30",
                 statusColor: "bg-blue-500/20 text-blue-300",
@@ -529,7 +420,7 @@ export default function HomePage() {
               },
               {
                 title: "SaintSal™ Mark",
-                status: "FILED TODAY",
+                status: "FILED",
                 date: "#99538313",
                 note: "Dec 9, 2025",
                 value: "+$40-100M",
@@ -541,7 +432,7 @@ export default function HomePage() {
             ].map((ip, i) => (
               <div
                 key={i}
-                className={`relative p-8 rounded-3xl bg-gradient-to-b ${ip.gradient} border ${ip.border} hover:border-opacity-60 transition-all duration-300 group hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/10`}
+                className={`relative p-8 rounded-3xl bg-gradient-to-b ${ip.gradient} border ${ip.border} hover:border-opacity-60 transition-all duration-300 group hover:scale-105`}
               >
                 <div className="absolute top-4 right-4">
                   <div className={`px-3 py-1.5 rounded-full ${ip.statusColor} text-xs font-bold tracking-wide`}>
@@ -555,17 +446,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="space-y-2 mb-6">
-                  <div className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <div className="text-sm text-white/70 font-medium">{ip.date}</div>
-                  </div>
+                  <div className="text-sm text-white/70 font-medium">{ip.date}</div>
                   <div className="text-xs text-white/50 italic">{ip.note}</div>
                 </div>
 
@@ -579,7 +460,6 @@ export default function HomePage() {
           </div>
 
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-green-500/10 via-emerald-500/10 to-green-500/10 border border-green-500/30 p-12 text-center">
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-500/5 to-transparent animate-shimmer" />
             <div className="relative z-10">
               <div className="text-white/50 text-lg mb-3">BlueIron $18M Loan</div>
               <div className="text-6xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 mb-4">
@@ -587,52 +467,94 @@ export default function HomePage() {
               </div>
               <div className="text-white/70 text-lg max-w-2xl mx-auto">
                 <span className="text-white font-semibold">Ultra-Conservative.</span> Strongest collateral position in
-                IP lending history — <span className="text-green-400">4 layers of protection</span>.
+                IP lending history.
               </div>
-            </div>
-          </div>
-
-          <div className="mt-12 text-center">
-            <div className="inline-block px-8 py-4 rounded-full bg-amber-500/10 border border-amber-500/30">
-              <span className="text-amber-400 font-bold text-lg">4x multiplier</span>
-              <span className="text-white/60 text-lg"> from dual patents + dual trademark protection</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Products Suite */}
-      <section className="py-32 px-6">
+      {/* Footer */}
+      <footer className="py-16 px-6 border-t border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-amber-400 text-sm font-medium mb-4">THE SAINTSAL™ SUITE</p>
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-              Everything you need.
-              <br />
-              <span className="text-white/50">Nothing you don't.</span>
-            </h2>
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
+            <div className="md:col-span-2">
+              <div className="flex items-center gap-3 mb-6">
+                <Image
+                  src="/images/transparentsaintsallogo.png"
+                  alt="SaintSal™"
+                  width={48}
+                  height={48}
+                  className="rounded-xl"
+                />
+                <div>
+                  <span className="text-2xl font-serif font-bold text-gold-shimmer">
+                    SaintSal<sup className="text-xs">™</sup>
+                  </span>
+                  <p className="text-xs text-white/40">By Saint Vision Technologies</p>
+                </div>
+              </div>
+              <p className="text-white/50 max-w-md mb-6">
+                The AI-powered platform for building wealth through trading, real estate, and business intelligence.
+              </p>
+              <div className="text-xs text-white/30">
+                US Patent 10,290,222 | HACP™ Patent Pending | SaintSal™ & HACP™ are registered trademarks
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-white font-semibold mb-4">Ecosystem</h4>
+              <div className="space-y-3">
+                <a
+                  href="https://cookinpartners.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-white/50 hover:text-amber-400 transition-colors"
+                >
+                  CookinPartners
+                </a>
+                <a
+                  href="https://cookincapital.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-white/50 hover:text-amber-400 transition-colors"
+                >
+                  CookinCapital
+                </a>
+                <a
+                  href="https://cookinflips.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-white/50 hover:text-amber-400 transition-colors"
+                >
+                  CookinFlips
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-white font-semibold mb-4">Platform</h4>
+              <div className="space-y-3">
+                <Link href="/auth/login" className="block text-white/50 hover:text-amber-400 transition-colors">
+                  Sign In
+                </Link>
+                <Link href="/auth/signup" className="block text-white/50 hover:text-amber-400 transition-colors">
+                  Get Started
+                </Link>
+                <Link href="/dashboard" className="block text-white/50 hover:text-amber-400 transition-colors">
+                  Dashboard
+                </Link>
+              </div>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
-            {[
-              { name: "Console", desc: "Command center", icon: Target },
-              { name: "Chat", desc: "AI advisor", icon: MessageSquare },
-              { name: "Other Product", desc: "Description of other product", icon: DollarSign },
-            ].map((product, i) => (
-              <div
-                key={i}
-                className="p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300"
-              >
-                <div className="mb-4">
-                  <product.icon className="w-10 h-10 text-amber-400" />
-                </div>
-                <h3 className="text-lg font-medium mb-2 text-white">{product.name}</h3>
-                <p className="text-sm text-white/50 leading-relaxed">{product.desc}</p>
-              </div>
-            ))}
+          <div className="pt-8 border-t border-white/5 text-center">
+            <p className="text-white/30 text-sm">
+              © {new Date().getFullYear()} Saint Vision Technologies LLC. All rights reserved.
+            </p>
           </div>
         </div>
-      </section>
+      </footer>
     </div>
   )
 }
